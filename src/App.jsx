@@ -8,6 +8,8 @@ function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [userData, setUserData] = useState({ name: "", age: "", city: "" });
 
+  const API_BASE ="https:// frontend-reactjs-crud.netlify.app"
+
   // ✅ Fetch all users
   const getAllUsers = async () => {
     try {
