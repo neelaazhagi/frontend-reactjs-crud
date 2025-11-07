@@ -8,12 +8,12 @@ function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [userData, setUserData] = useState({ name: "", age: "", city: "" });
 
-  const API_BASE ="https:// frontend-reactjs-crud.netlify.app"
+  const API_BASE ="https://frontend-crud-react.netlify.app"
 
   // ✅ Fetch all users
   const getAllUsers = async () => {
     try {
-      const res = await axios.get("http://localhost:8000/users");
+      const res = await axios.get("https://backend-node-crud-5.onrender.com/users");
       setUsers(res.data);
       setFilterusers(res.data);
     } catch (err) {
@@ -42,7 +42,7 @@ function App() {
     if (!isConfirmed) return;
 
     try {
-      const res = await axios.delete(`http://localhost:8000/users/${id}`);
+      const res = await axios.delete(`https://backend-node-crud-5.onrender.com/users/${id}`);
       setUsers(res.data);
       setFilterusers(res.data);
     } catch (err) {
@@ -73,13 +73,13 @@ function App() {
     try {
       if (userData.id) {
         // Update existing user
-        const res = await axios.patch(`http://localhost:8000/users/${userData.id}`, userData);
+        const res = await axios.patch(`https://backend-node-crud-5.onrender.com/users/${userData.id}`, userData);
         console.log("✅ Updated user:", res.data);
         setUsers(res.data);
         setFilterusers(res.data);
       } else {
         // Add new user
-        const res = await axios.post("http://localhost:8000/users", userData);
+        const res = await axios.post("https://backend-node-crud-5.onrender.com/users", userData);
         console.log("✅ Added user:", res.data);
         setUsers(res.data);
         setFilterusers(res.data);
