@@ -13,7 +13,7 @@ function App() {
   // ✅ Fetch all users
   const getAllUsers = async () => {
     try {
-      const res = await axios.get("https://backend-node-crud-5.onrender.com/users");
+      const res = await axios.get("https://backend-node-crud-6.onrender.com/users");
       setUsers(res.data);
       setFilterusers(res.data);
     } catch (err) {
@@ -42,7 +42,7 @@ function App() {
     if (!isConfirmed) return;
 
     try {
-      const res = await axios.delete(`https://backend-node-crud-5.onrender.com/users/${id}`);
+      const res = await axios.delete(`https://backend-node-crud-6.onrender.com/users/${id}`);
       setUsers(res.data);
       setFilterusers(res.data);
     } catch (err) {
@@ -73,13 +73,13 @@ function App() {
     try {
       if (userData.id) {
         // Update existing user
-        const res = await axios.patch(`https://backend-node-crud-5.onrender.com/users/${userData.id}`, userData);
+        const res = await axios.patch(`https://backend-node-crud-6.onrender.com/users/${userData.id}`, userData);
         console.log("✅ Updated user:", res.data);
         setUsers(res.data);
         setFilterusers(res.data);
       } else {
         // Add new user
-        const res = await axios.post("https://backend-node-crud-5.onrender.com/users", userData);
+        const res = await axios.post("https://backend-node-crud-6.onrender.com/users", userData);
         console.log("✅ Added user:", res.data);
         setUsers(res.data);
         setFilterusers(res.data);
